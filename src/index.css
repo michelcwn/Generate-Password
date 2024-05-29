@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  /* Styles personnalisés pour la case à cocher */
+  .checkbox-custom {
+    @apply appearance-none bg-customDarkerGray border border-gray-300 w-5 h-5 inline-block cursor-pointer hover:border-customGreen;
+  }
+
+  .checkbox-custom:checked {
+    @apply bg-customGreen border-customGreen;
+  }
+
+  .checkbox-custom:checked::after {
+    content: "";
+    @apply block w-full h-full;
+    background-color: bg-customGreen; /* Couleur de la coche */
+    background-image: url("../public/images/icon-check.svg");
+    background-size: 70% 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Styles personnalisés pour l'élément de saisie de type "range" */
+  .range-input {
+    @apply appearance-none w-full h-2 rounded-lg;
+    background: linear-gradient(to right, #a4ffaf 50%, #18171f 50%);
+    transition: background 0.3s ease;
+  }
+
+  .range-input::-webkit-slider-runnable-track {
+    @apply rounded-lg;
+    background: transparent; /* Utiliser la propriété de style en ligne pour le fond */
+  }
+
+  .range-input::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 bg-white rounded-full cursor-pointer;
+    margin-top: -1.5px; /* Ajuster la position du pouce */
+    transition: background 0.3s ease;
+  }
+
+  .range-input::-webkit-slider-thumb:active,
+  .range-input::-webkit-slider-thumb:focus {
+    background: #18171f;
+  }
+
+  .range-input::-moz-range-track {
+    @apply rounded-lg;
+    background: transparent; /* Utiliser la propriété de style en ligne pour le fond */
+  }
+
+  .range-input::-moz-range-thumb {
+    @apply w-5 h-5 bg-white rounded-full cursor-pointer;
+    transition: background 0.3s ease;
+  }
+
+  .range-input::-moz-range-thumb:active,
+  .range-input::-moz-range-thumb:focus {
+    background: #18171f;
+  }
+
+  .range-input::-ms-track {
+    @apply rounded-lg;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  .range-input::-ms-fill-lower {
+    background: #a4ffaf; /* Couleur verte à gauche */
+    border-radius: 5px;
+  }
+
+  .range-input::-ms-fill-upper {
+    background: #18171f; /* Couleur noire à droite */
+    border-radius: 5px;
+  }
+
+  .range-input::-ms-thumb {
+    @apply w-5 h-5 bg-white rounded-full cursor-pointer;
+    transition: background 0.3s ease;
+  }
+
+  .range-input::-ms-thumb:active,
+  .range-input::-ms-thumb:focus {
+    background: #18171f;
+  }
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/fonts/JetBrainsMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/fonts/JetBrainsMono-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("/fonts/JetBrainsMono-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
